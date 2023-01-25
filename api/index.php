@@ -8,7 +8,7 @@
  */
 
 // Parse the JSON feed
-$userName  = filter_input(INPUT_GET, 'username', FILTER_SANITIZE_STRING);
+$userName  = filter_input(INPUT_GET, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
 $limit     = filter_input(INPUT_GET, 'limit', FILTER_SANITIZE_NUMBER_INT) ?? 4;
 $baseUrl   = 'https://www.tabnews.com.br';
 $postsJson = file_get_contents("{$baseUrl}/api/v1/contents/{$userName}");

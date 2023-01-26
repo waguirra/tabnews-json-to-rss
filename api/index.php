@@ -15,7 +15,7 @@ $postsJson = file_get_contents("{$baseUrl}/api/v1/contents/{$userName}");
 $posts     = json_decode($postsJson);
 
 // Create the RSS feed object
-$rss = new SimpleXMLElement('<rss version="1.0"></rss>');
+$rss = new SimpleXMLElement('<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"></rss>');
 
 // Add the channel element to the RSS feed
 $channel = $rss->addChild('channel');
